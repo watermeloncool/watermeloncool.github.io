@@ -12,7 +12,7 @@ a{color:black; text-decoration:none;}
 #introtexte{width:35%; margin:17vh 0 0 10%; display:inline-block; }
 .titre{font-size:60px; font-size:4vw; font-weight:700; width: max-content;  animation: fadeinout 2.5s linear forwards;}
 @keyframes fadeinout {0% {opacity: 0;} 50% {opacity: 1;} 75% {opacity: 1;} 100% {opacity: 0;}}
-.soustitre{line-height: 160%; max-width:505px; margin-top:30px; }
+.soustitre{line-height: 155%; max-width:505px; margin-top:30px; }
 #btn{font-size:16px; font-weight:500; display:inline-block; margin-top:40px; padding:13px 20px; background:black; color:white; border-radius:12px;}
 #btn:hover{opacity:0.7;}
 
@@ -21,8 +21,8 @@ a{color:black; text-decoration:none;}
 
 #corps{margin: 22vh 0 0 10%; width:700px; max-width:80%; /*margin-left:calc(50% - 350px);*/ }
 .titre2{font-size:28px; font-weight:700; margin-top:50px; padding:16px 0 0 0; line-height: 130%; }
-.texte{margin-top:20px; line-height: 150%; }
-li{line-height: 150%; }
+.texte{margin-top:20px; line-height: 155%; }
+li{line-height: 155%; }
 
 #reassurance{margin:80px 0 60px 50px; font-size:25px; font-weight:500;}
 #reassurance div{ margin:20px 0; }
