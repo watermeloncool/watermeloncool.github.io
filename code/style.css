@@ -47,7 +47,7 @@ select {cursor:pointer;}
 #menumobile, #sousmenumobile {display:none;}
 #menumobile img {padding:20px 20px;}
 #sousmenumobile {padding:40px 40px; text-align:left; height:100vh;}
-#sousmenumobile div {padding:20px 0;font-size:30px;  color:white;}
+#sousmenumobile div {padding:20px 0;font-size:30px;  color:white; line-height:110%;}
 #close {display:none}
 
 @media screen and (max-width: 600px) { 
