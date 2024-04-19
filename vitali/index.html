@@ -11,7 +11,7 @@
 
 <style>
 body,html{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; scroll-behavior: smooth; margin:0; padding:0; font-size:16px; font-weight:500;   }
-#code, #question, #resultat {display:block; width:80%; margin:10px;}
+#code, #question, #reponse {display:block; width:80%; margin:10px;}
 button {margin:10px;}
 h2 {margin:10px;}
 </style>
@@ -24,14 +24,14 @@ h2 {margin:10px;}
 <input type="text" id="code" placeholder="Код">
 <input type="text" id="question" placeholder="Вопрос">
 <button onclick="askChatGPT()">Отправить</button>
-<div id="resultat"></div>
+<div id="reponse"></div>
 
 <script>
   async function askChatGPT() {
       const question = document.getElementById('question').value;
       const code = document.getElementById('code').value;
-      const responseDiv = document.getElementById('resultat');
-      responseDiv.innerHTML = 'Загрузка...';  // Message de chargement
+      const reponse = document.getElementById('reponse');
+      reponse.innerHTML = 'Загрузка...';  // Message de chargement
 
       try {
           const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -46,12 +46,12 @@ h2 {margin:10px;}
               })
           });
           const data = await response.json();
-          // console.log(data);
-          responseDiv.innerHTML = data.choices[0].message.content;  // Afficher la réponse
+          // console.log(data.error.message);
+          reponse.innerHTML = data.error.message;
+          reponse.innerHTML += '<br><br>' + data.choices[0].message.content;
       } catch (error) {
-          // responseDiv.innerHTML = 'Erreur lors de la récupération de la réponse.';
-          // console.error('Erreur lors de la demande:', error);
-          responseDiv.innerHTML = 'Ошибка : ' + data;
+        reponse.innerHTML += '<br><br>Ошибка';
+        console.error('Erreur lors de la demande:', error);
       }
   }
 </script>
