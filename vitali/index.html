@@ -49,8 +49,9 @@ h2 {margin:10px;}
           // console.log(data);
           responseDiv.innerHTML = data.choices[0].message.content;  // Afficher la réponse
       } catch (error) {
-          responseDiv.innerHTML = 'Erreur lors de la récupération de la réponse.';
-          console.error('Erreur lors de la demande:', error);
+          // responseDiv.innerHTML = 'Erreur lors de la récupération de la réponse.';
+          // console.error('Erreur lors de la demande:', error);
+          responseDiv.innerHTML = 'Ошибка : ' + data;
       }
   }
 </script>
