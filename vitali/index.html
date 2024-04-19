@@ -47,10 +47,10 @@ h2 {margin:10px;}
           });
           const data = await response.json();
           // console.log(data.error.message);
-          reponse.innerHTML = data.error.message;
-          reponse.innerHTML += '<br><br>' + data.choices[0].message.content;
+          if (data && data.error && data.error.message) {reponse.innerHTML = data.error.message;}
+          reponse.innerHTML = data.choices[0].message.content;
       } catch (error) {
-        reponse.innerHTML += '<br><br>Ошибка';
+        // reponse.innerHTML += '<br><br>Ошибка';
         console.error('Erreur lors de la demande:', error);
       }
   }
