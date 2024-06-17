@@ -28,8 +28,8 @@
 <script>
 
 // articles -------------------------------------------------------------------------------------------------------------
-    // Récupérez l'image à compresser
-    const img = new Image();
+      // Récupérez l'image à compresser
+      const img = new Image();
     img.src = 'img/dev3.jpg';
 
     // Attendez que l'image soit chargée
@@ -50,12 +50,12 @@
         // Créez un objet URL pour le blob
         const url = URL.createObjectURL(blob);
 
-        // Ajoutez le blob à l'élément HTML en tant que contenu
-        const anchor = document.createElement('a');
-        anchor.href = url;
-        anchor.download = 'compressed_image.jpg'; // nom du fichier téléchargé
-        anchor.textContent = 'Télécharger l\'image compressée'; // texte du lien
-        compressionElement.appendChild(anchor);
+        // Créez un élément image pour afficher l'image compressée
+        const compressedImg = document.createElement('img');
+        compressedImg.src = url;
+
+        // Ajoutez l'image compressée à l'élément HTML
+        compressionElement.appendChild(compressedImg);
       }, 'image/jpeg', 0.8); // qualité de compression (ici, 80%)
     };
 
